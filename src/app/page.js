@@ -1,113 +1,72 @@
-import Image from "next/image";
+"use client"
+import Link from 'next/link';
+import Image from 'next/image'
+import './globals.css';
+import Navbar from '../../component/Navbar';
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+   <>
+    <Navbar/>
+    {/* ===========================================hero banner==================================================== */}
+    <div className="th-hero-wrapper hero-1" id="hero" data-bg-src="assets/img/hero/hero-bg1-1.png">
+        <div className="container">
+            <div className="hero-style1 text-center"><span className="sub-title custom-anim-top wow animated"
+                    data-wow-duration="1.2s" data-wow-delay="0.1s"># World Class eSports & Gaming Site</span>
+                <h1 className="hero-title"><span className="title1 custom-anim-top wow animated" data-wow-duration="1.1s"
+                        data-wow-delay="0.3s" data-bg-src="assets/img/hero/hero-title-bg-shape1.svg">SHAPING THE FUTURE
+                        OF</span> <span className="title2 custom-anim-top wow animated" data-wow-duration="1.1s"
+                        data-wow-delay="0.4s">ESPORTS</span></h1>
+                <div className="btn-group custom-anim-top wow animated" data-wow-duration="1.2s" data-wow-delay="0.7s"><a
+                        href="about.html" className="th-btn">EXPLORE MORE <i className="fa-solid fa-arrow-right ms-2"></i></a>
+                    <a href="tournament.html" className="th-btn style2">BROWSE GAMES <i
+                            className="fa-solid fa-arrow-right ms-2"></i></a></div>
+            </div>
         </div>
-      </div>
+    </div>
+    {/* ========================================hero banner end====================================================== */}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div className="swiper-slide">
+            <div className="hero-cta-inner">
+                <div className="container th-container2">
+                    <div className="hero-shape-area">
+                        <div className="hero-bg-shape">
+                            <div className="hero-bg-border-anime" data-mask-src="assets/img/hero/hero-bg-shape.png">
+                            </div>
+                            <svg viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1599 30V490C1599 506.016 1586.02 519 1570 519H1062.43C1054.74 519 1047.36 515.945 1041.92 510.506L1009.49 478.08C1003.68 472.266 995.795 469 987.574 469H612.426C604.205 469 596.32 472.266 590.506 478.08L558.08 510.506C552.641 515.945 545.265 519 537.574 519H30C13.9837 519 1 506.016 1 490V30C1 13.9837 13.9837 1 30 1H400H537.574C545.265 1 552.641 4.05535 558.08 9.4939L590.506 41.9203C596.32 47.7339 604.205 51 612.426 51H987.574C995.795 51 1003.68 47.7339 1009.49 41.9203L1041.92 9.4939C1047.36 4.05535 1054.74 1 1062.43 1H1200H1570C1586.02 1 1599 13.9837 1599 30Z"
+                                    fill="black" stroke="url(#paint0_linear2_47_22)" strokeWidth="2" />
+                                <mask id="mask1_47_22" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0">
+                                    <path
+                                        d="M1600 490V30C1600 13.4315 1586.57 0 1570 0H1200H1062.43C1054.47 0 1046.84 3.1607 1041.21 8.7868L1008.79 41.2132C1003.16 46.8393 995.53 50 987.574 50H612.426C604.47 50 596.839 46.8393 591.213 41.2132L558.787 8.7868C553.161 3.16071 545.53 0 537.574 0H400H30C13.4315 0 0 13.4314 0 30V490C0 506.569 13.4315 520 30 520H537.574C545.53 520 553.161 516.839 558.787 511.213L591.213 478.787C596.839 473.161 604.47 470 612.426 470H987.574C995.53 470 1003.16 473.161 1008.79 478.787L1041.21 511.213C1046.84 516.839 1054.47 520 1062.43 520H1570C1586.57 520 1600 506.569 1600 490Z"
+                                        fill="black" />
+                                </mask>
+                                {/* Additional SVG elements */}
+                            </svg>
+                            <div className="verses-thumb d-xl-none d-block"><img
+                                src="assets/img/tournament/game-vs1.svg" alt="tournament image" /></div>
+                            <div className="hero-img1 z-index-common" data-ani="slideinleft" data-ani-delay="0.4s"><img
+                                src="assets/img/hero/hero-1-3.png" alt="Image" /></div>
+                            <div className="hero-img2 z-index-common" data-ani="slideinright" data-ani-delay="0.4s"><img
+                                src="assets/img/hero/hero-1-4.png" alt="Image" /></div>
+                        </div>
+                        <div className="title-area mb-0">
+                            <h2 className="sec-title text-white custom-anim-top wow animated" data-wow-duration="1.3s"
+                                data-wow-delay="0.1s">Join The Big Tournaments</h2>
+                            <p className="mt-30 mb-30 custom-anim-top wow animated" data-wow-duration="1.3s"
+                                data-wow-delay="0.2s">Beyond esports tournaments, include a broader calendar of
+                                gaming events, conferences, and conventions. and connect with each other.</p>
+                            <div className="btn-group custom-anim-top wow animated" data-wow-duration="1.3s"
+                                data-wow-delay="0.2s"><a href="about.html" className="th-btn style-border"><span
+                                    className="btn-border">JOIN NOW <i
+                                        className="fa-solid fa-arrow-right ms-2"></i></span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </>
   );
 }
