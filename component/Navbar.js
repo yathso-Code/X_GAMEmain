@@ -90,7 +90,7 @@ const Navbar = () => {
                                 </ul>
                             </nav>
                             <div className="header-button d-flex d-lg-none"><button type="button"
-                                    className="th-menu-toggle"><span className="btn-border">this </span></button></div>
+                                    className="th-menu-toggle"><span className="btn-border"><FontAwesomeIcon icon={faBars} /> </span></button></div>
                         </div>
                         <div className="col-auto d-none d-xl-block">
                             <div className="header-button"><button type="button" className="simple-icon searchBoxToggler"><FontAwesomeIcon icon={faMagnifyingGlass} /></button> <button type="button"
