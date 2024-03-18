@@ -7,6 +7,58 @@ import { faAngleDown, faAngleRight, faMagnifyingGlass,faBars } from '@fortawesom
 const Navbar = () => {
   return (
     <>
+      <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo"><a href="index.html"><span data-mask-src="assets/img/logo.svg"
+                        class="logo-mask"></span><img src="logo.svg" alt="Bame"/></a></div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li class="menu-item-has-children"><a href="index.html">HOME</a>
+                        <ul class="sub-menu">
+                            <li><a href="index.html">Home One</a></li>
+                            <li><a href="home-2.html">Home Two</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li class="menu-item-has-children"><a href="#">TOURNAMENT</a>
+                        <ul class="sub-menu">
+                            <li><a href="tournament.html">Tournament</a></li>
+                            <li><a href="tournament-details.html">Tournament Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="#">BLOG</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="#">PAGES</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item-has-children"><a href="#">Shop</a>
+                                <ul class="sub-menu">
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="shop-details.html">Shop Details</a></li>
+                                    <li><a href="cart.html">Cart Page</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="team.html">Players</a></li>
+                            <li><a href="team-details.html">Players Details</a></li>
+                            <li><a href="game.html">Game</a></li>
+                            <li><a href="game-details.html">Game Details</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="point-table.html">Point Table</a></li>
+                            <li><a href="error.html">Error Page</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
        <header className="th-header header-layout1">
         <div className="header-top">
             <div className="container">
