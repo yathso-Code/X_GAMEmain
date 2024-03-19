@@ -1,251 +1,161 @@
 "use client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightToBracket} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRightToBracket, faCaretLeft, faCaretRight} from '@fortawesome/free-solid-svg-icons'
 import "./globals.css";
 import Navbar from "../../component/Navbar";
 import Image from "next/image";
-import SwiperCore, { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect , useRef} from 'react';
 import 'swiper/swiper-bundle.css';
 import Footer from '../../component/Footer';
+import '../../node_modules/swiper/swiper-bundle.min.css'; // Import Swiper CSS
+import Swiper from 'swiper';
+// import Swiper from '../../node_modules/swiper/swiper-bundle.min.js'; // Import Swiper JS
 
 
 export default function Home() {
-   
-  document.addEventListener("DOMContentLoaded", function () {
-    "use strict";
-  
-    // Preloader
-    window.addEventListener("load", function () {
-      document.querySelector(".preloader").classList.add("fadeOut");
-      new WOW().init();
+
+  // =======================================game swipe============================\
+  let swiperGame = useRef(null);
+  useEffect(() => {
+    const swiper = new Swiper(swiperGame.current, {
+      loop: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: { slidesPerView: 1, spaceBetween: 5 },
+        1024: { slidesPerView: 3, spaceBetween: 5 },
+        1280: { slidesPerView: 5, spaceBetween: 5 }
+      }
     });
-  
-    // Hide preloader on click
-    if (document.querySelector(".preloader")) {
-      document.querySelectorAll(".preloaderCls").forEach(function (element) {
-        element.addEventListener("click", function (event) {
-          event.preventDefault();
-          document.querySelector(".preloader").style.display = "none";
+
+    return () => swiper.destroy();
+  }, []);
+
+  let handleGamePrev = () => swiperGame.current?.swiper.slidePrev()
+   let handleGameNext = () => swiperGame.current?.swiper.slideNext()
+  // ===============================swipt news=================================
+   let swiperNews = useRef(null)
+
+   useEffect(() => {
+    const swiper = new Swiper(swiperNews.current, {
+      loop: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: { slidesPerView: 1, spaceBetween: 0 },
+        1024: { slidesPerView: 3, spaceBetween: 0 },
+        1280: { slidesPerView: 5, spaceBetween: 0 }
+      }
+    });
+
+    return () => swiper.destroy();
+  }, []);
+  // ===============================shop-------------------------------
+  let swiperShop = useRef(null);
+
+  useEffect(() => {
+    const swiper = new Swiper(swiperShop.current, {
+      loop: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: { slidesPerView: 1, spaceBetween: 0 },
+        1024: { slidesPerView: 3, spaceBetween: 0 },
+        1280: { slidesPerView: 5, spaceBetween: 0 }
+      }
+    });
+
+    return () => swiper.destroy();
+  }, []);
+
+  const handleShopPrev = () => swiperShop.current?.swiper.slidePrev();
+  const handleShopNext = () => swiperShop.current?.swiper.slideNext();
+
+
+  // ======================swiper pro gamer ========================= 
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    const swiper = new Swiper(swiperRef.current, {
+      loop: true,
+      centeredSlides: true,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      breakpoints: { 768: { slidesPerView: 1, spaceBetween: 0 }, 1024: { slidesPerView: 3, spaceBetween: 0 }, 1280: { slidesPerView: 5, spaceBetween: 0 } }
+    });
+    return () => swiper.destroy();
+  }, []);
+
+  const handlePrev = () => swiperRef.current?.swiper.slidePrev();
+  const handleNext = () => swiperRef.current?.swiper.slideNext();
+
+  useEffect(() => {
+    const interval = setInterval(() => handleNext(), 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  //  ==================================auto slider==========================================
+  useEffect(() => {
+    const photos = Array.from(document.getElementsByClassName("photo"));
+    const photoWrapper = document.getElementById("photoWrapper");
+
+    if (photoWrapper) {
+      let count = 0;
+      photos.forEach((photo) => {
+        count++;
+        if (count % 2) {
+          photo.classList.add("even");
+        }
+      });
+
+      photoWrapper.addEventListener("scroll", () => {
+        photos.forEach(checkPosition);
+      });
+
+      function checkPosition(photo) {
+        if (photo.getBoundingClientRect().right - 4 <= 0) {
+          photo.remove();
+          photoWrapper.append(photo);
+          photoWrapper.scrollLeft = 0;
+          return;
+        }
+      }
+
+      function infiniteScroll() {
+        photoWrapper.scrollLeft++;
+        requestAnimationFrame(infiniteScroll);
+      }
+
+      infiniteScroll();
+
+      return () => {
+        photoWrapper.removeEventListener("scroll", () => {
+          photos.forEach(checkPosition);
         });
-      });
-    }
-  
-    // Mobile Menu
-    document.querySelector(".th-menu-wrapper").thmobilemenu();
-  
-    // Sticky header
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 500) {
-        document.querySelector(".sticky-wrapper").classList.add("sticky");
-        document.querySelector(".category-menu").classList.add("close-category");
-      } else {
-        document.querySelector(".sticky-wrapper").classList.remove("sticky");
-        document.querySelector(".category-menu").classList.remove("close-category");
-      }
-    });
-  
-    // Menu expand
-    document.querySelectorAll(".menu-expand").forEach(function (element) {
-      element.addEventListener("click", function (event) {
-        event.preventDefault();
-        document.querySelector(".category-menu").classList.toggle("open-category");
-      });
-    });
-  
-    // Scroll to top button
-    if (document.querySelector(".scroll-top")) {
-      let scrollTop = document.querySelector(".scroll-top");
-      let path = document.querySelector(".scroll-top path");
-      let pathLength = path.getTotalLength();
-      path.style.transition = path.style.WebkitTransition = "none";
-      path.style.strokeDasharray = pathLength + " " + pathLength;
-      path.style.strokeDashoffset = pathLength;
-      path.getBoundingClientRect();
-      path.style.transition = path.style.WebkitTransition = "stroke-dashoffset 10ms linear";
-      let handleScroll = function () {
-        let scrollPosition = window.scrollY;
-        let documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-        let scrollPercentage = (scrollPosition * pathLength) / documentHeight;
-        path.style.strokeDashoffset = pathLength - scrollPercentage;
       };
-      handleScroll();
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) {
-          scrollTop.classList.add("show");
-        } else {
-          scrollTop.classList.remove("show");
-        }
-      });
-      scrollTop.addEventListener("click", function (event) {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
     }
-  
-    // Lazy load background images
-    if (document.querySelectorAll("[data-bg-src]").length > 0) {
-      document.querySelectorAll("[data-bg-src]").forEach(function (element) {
-        let bgSrc = element.getAttribute("data-bg-src");
-        element.style.backgroundImage = "url(" + bgSrc + ")";
-        element.removeAttribute("data-bg-src");
-        element.classList.add("background-image");
-      });
-    }
-  
-    // Set background color
-    if (document.querySelectorAll("[data-bg-color]").length > 0) {
-      document.querySelectorAll("[data-bg-color]").forEach(function (element) {
-        let bgColor = element.getAttribute("data-bg-color");
-        element.style.backgroundColor = bgColor;
-        element.removeAttribute("data-bg-color");
-      });
-    }
-  
-    // Set border color
-    if (document.querySelectorAll("[data-border]").length > 0) {
-      document.querySelectorAll("[data-border]").forEach(function (element) {
-        let borderColor = element.dataset.border;
-        element.style.setProperty("--th-border-color", borderColor);
-      });
-    }
-  
-    // Load SVG images inline
-    if (document.querySelectorAll(".svg-img").length > 0) {
-      const svgImages = document.querySelectorAll(".svg-img");
-      const svgCache = {};
-      svgImages.forEach(function (svgImage) {
-        const src = svgImage.src;
-        if (!svgCache[src]) {
-          const promise = new Promise(function (resolve) {
-            fetch(src)
-              .then((response) => response.text())
-              .then((text) => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, "image/svg+xml");
-                const svg = doc.documentElement;
-                svgImage.insertAdjacentElement("afterend", svg);
-                svgCache[src] = svg;
-                resolve();
-              });
-          });
-          svgCache[src] = promise;
-        }
-      });
-    }
-  
-    // Activate Swiper sliders
-    if (document.querySelectorAll(".th-slider").length > 0) {
-      document.querySelectorAll(".th-slider").forEach(function (slider) {
-        const sliderOptions = slider.dataset.sliderOptions ? JSON.parse(slider.dataset.sliderOptions) : {};
-        const swiper = new Swiper(slider, sliderOptions);
-        if (document.querySelectorAll(".slider-area").length > 0) {
-          document.querySelectorAll(".slider-area").forEach(function (sliderArea) {
-            sliderArea.closest(".container").parentNode.classList.add("arrow-wrap");
-          });
-        }
-      });
-    }
-  
-    // Activate countdown timers
-    if (document.querySelectorAll(".counter-list").length > 0) {
-      document.querySelectorAll(".counter-list").forEach(function (counter) {
-        let offerDate = new Date(counter.dataset.offerDate).getTime();
-        let countdownInterval = setInterval(function () {
-          let currentTime = new Date().getTime();
-          let timeDifference = offerDate - currentTime;
-          let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-          let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-          let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-          if (timeDifference < 0) {
-            clearInterval(countdownInterval);
-            counter.classList.add("expired");
-            counter.querySelector(".message").style.display = "block";
-          } else {
-            counter.querySelector(".day").innerHTML = days < 10 ? "0" + days : days;
-            counter.querySelector(".hour").innerHTML = hours < 10 ? "0" + hours : hours;
-            counter.querySelector(".minute").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            counter.querySelector(".seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-          }
-        }, 1000);
-      });
-    }
-  
-    // Initialize lettering.js
-    if (document.querySelector(".circle-title-anime")) {
-      document.querySelectorAll(".circle-title-anime").forEach(function (element) {
-        element.classList.add("char");
-      });
-    }
-  
-    // Cursor animation
-    const cursor = document.querySelector(".cursor");
-    let cursorX = 0;
-    let cursorY = 0;
-    let pageX = 0;
-    let pageY = 0;
-  
-    function animateCursor() {
-      let distX = pageX - cursorX;
-      let distY = pageY - cursorY;
-      cursorX = cursorX + distX / 8;
-      cursorY = cursorY + distY / 8;
-      cursor.style.left = cursorX - 12 + "px";
-      cursor.style.top = cursorY - 12 + "px";
-      requestAnimationFrame(animateCursor);
-    }
-  
-    animateCursor();
-  
-    window.addEventListener("mousemove", function (event) {
-      pageX = event.pageX;
-      pageY = event.pageY;
-    });
-  
-    document.querySelectorAll(".btn").forEach(function (element) {
-      element.addEventListener("mouseenter", function () {
-        cursor.classList.add("active");
-      });
-      element.addEventListener("mouseleave", function () {
-        cursor.classList.remove("active");
-      });
-    });
-  
-    // Prevent context menu
-    window.addEventListener("contextmenu", function (event) {
-      event.preventDefault();
-    });
-  
-    // Prevent key combinations
-    document.onkeydown = function (event) {
-      if (event.ctrlKey && event.shiftKey && event.keyCode === "I".charCodeAt(0)) {
-        return false;
-      }
-      if (event.ctrlKey && event.shiftKey && event.keyCode === "C".charCodeAt(0)) {
-        return false;
-      }
-      if (event.ctrlKey && event.shiftKey && event.keyCode === "J".charCodeAt(0)) {
-        return false;
-      }
-      if (event.ctrlKey && event.keyCode === "U".charCodeAt(0)) {
-        return false;
-      }
-    };
-  });
-  
+  }, []);
+
 
 
 
   return (
     <>
+    <div className='home_main_box'>
       <Navbar />
       {/* ===========================================hero banner==================================================== */}
       <div
         className="th-hero-wrapper hero-1"
-        id="hero"
-        style={{ backgroundImage: `url('/hero-bg1-1.png')` , height: '467px'}}
+         id="hero"
+        style={{ backgroundImage: `url('/hero-bg1-1.png')` }}
 
       >
         <div className="container">
@@ -296,7 +206,7 @@ export default function Home() {
         className="swiper th-slider hero-cta-slider1"
         id="heroSlider1"
         data-slider-options='{"effect":"fade"}'
-        style={{ marginTop: '0', backgroundColor: 'black'}}
+        style={{zIndex: '100' }}
         
       >
         <div className="swiper-wrapper">
@@ -470,14 +380,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="swiper-slide">
+          {/* <div className="swiper-slide">
             <div className="hero-cta-inner">
               <div className="container th-container2">
                 <div className="hero-shape-area">
                   <div className="hero-bg-shape">
                     <div
                       className="hero-bg-border-anime"
-                      
                       style={{ backgroundImage: `url('/hero-bg-shape.png')` }}
                       // data-mask-src="assets/img/hero/hero-bg-shape.png"
                     ></div>
@@ -809,7 +718,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="slider-pagination"></div>
@@ -818,50 +727,7 @@ export default function Home() {
 
 
 
-      <div className="marquee-area-1 bg-repeat overflow-hidden" 
-        style={{ backgroundImage: `url('/jiji-bg.png')` }}
-        // data-bg-src="assets/img/bg/jiji-bg.png"
-      >
-        <div className="container-fluid">
-            <div className="swiper th-slider" id="marqueeSlider1"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":"auto"}},"autoplay":{"delay":1500,"disableOnInteraction":false},"spaceBetween":50}'>
-                <div className="swiper-wrapper">
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">GAMING SPANING</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">ACTION - PACKED</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">MIND - BENDING</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">COLLECTION OG GAMES</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">GAMING SPANING</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">ACTION - PACKED</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">MIND - BENDING</a></h3>
-                    </div>
-                    <div className="marquee-item swiper-slide">
-                        <div className="marquee_icon"><img src="/star.png" alt="Icon"/></div>
-                        <h3 className="marquee-title"><a href="service-details.html">COLLECTION OG GAMES</a></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      
 
 
 
@@ -869,7 +735,7 @@ export default function Home() {
     {/* ============================================about ower game============================================== */}
     <div className="overflow-hidden space" id="about-sec">
         <div className="about-bg-img shape-mockup" data-top="0" data-left="0"><img src="about-bg1.png"
-               style={{ width: '100vw', height: '700px'}}  alt="img"/></div>
+                 alt="img"/></div>
         <div className="container mt-6 " >
             <div className="row align-items-center">
                 <div className="col-xl-6 mb-50 mb-xl-0">
@@ -927,7 +793,7 @@ export default function Home() {
        {/* ----------------------------------sliding bar ---------------------------------------------------- */}
        
        <section className="overflow-hidden slide">
-        <div className="container th-container2  bg-black"  >
+        <div className="container th-container2 "  >
             <div className="game-sec-wrap1 space" 
              style={{ backgroundImage: `url('/game-sec1-bg.png')` }}
       
@@ -938,7 +804,7 @@ export default function Home() {
                 </div>
                 <div className="slider-area">
                     <div className="swiper th-slider game-slider-1" id="gameSlider1"
-                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
+                                        ref={swiperGame}>
                         <div className="swiper-wrapper">
                             <div className="swiper-slide"  style={{width: '300px'}}>
                                 <div className="game-card gradient-border">
@@ -1053,6 +919,8 @@ export default function Home() {
                         </div>
                         <div className="slider-pagination"></div>
                     </div>
+                    <div className="swiper-button-prev" onClick={handleGamePrev}></div>
+                    <div className="swiper-button-next" onClick={handleGameNext}></div>
                 </div>
             </div>
         </div>
@@ -1076,8 +944,8 @@ export default function Home() {
             <div className="feature-card-border">
               <div className="feature-card">
                 <div className="feature-card-icon custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                  <span className="feature-card-icon-mask" style={{ backgroundImage: `url('/feature_1.svg')` }}></span>
-                  <img src="/feature_1.svg" alt="img" />
+                  <span className="feature-card-icon-mask bb" style={{ backgroundImage: `url('/about_feature_1.svg')` }}></span>
+                  <img src="/about_feature_1.svg" alt="img" />
                 </div>
                 <div className="feature-card-details custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <h3 className="feature-card-title">Esports Lounge</h3>
@@ -1090,8 +958,8 @@ export default function Home() {
             <div className="feature-card-border">
               <div className="feature-card">
                 <div className="feature-card-icon custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                  <span className="feature-card-icon-mask" style={{ backgroundImage: `url('/feature_2.svg')` }}></span>
-                  <img src="/feature_2.svg" alt="img" />
+                  <span className="feature-card-icon-mask bb" style={{ backgroundImage: `url('/about_feature_2.svg')` }}></span>
+                  <img src="/about_feature_2.svg" alt="img" />
                 </div>
                 <div className="feature-card-details custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <h3 className="feature-card-title">Training Facilities</h3>
@@ -1104,8 +972,8 @@ export default function Home() {
             <div className="feature-card-border">
               <div className="feature-card">
                 <div className="feature-card-icon custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                  <span className="feature-card-icon-mask" style={{ backgroundImage: `url('/feature_3.svg')` }}></span>
-                  <img src="/feature_3.svg" alt="img" />
+                  <span className="feature-card-icon-mask bb" style={{ backgroundImage: `url('/about_feature_3.svg')` }}></span>
+                  <img src="/about_feature_3.svg" alt="img" />
                 </div>
                 <div className="feature-card-details custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <h3 className="feature-card-title">Broadcasting Studio</h3>
@@ -1211,7 +1079,7 @@ export default function Home() {
         </div>
     </section>
 
-     {/* ===================================================sliding  image================================================ */}
+     {/* ===================================================sliding  image================================================
      <div className="container-fluid p-0">
         <div className="gallery-area-1 overflow-hidden text-center">
             <div className="slider-area gallery-slider1">
@@ -1257,6 +1125,25 @@ export default function Home() {
     </div>
 
 
+ */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {/* ----------------------------------------------------------------------------------------------------------------------------- */}
     <section className="team-sec-1 space">
         <div className="team-shape1-1 shape-mockup" data-top="0" data-right="0"><img src="/img/bg/team-sec1-bg.png"
@@ -1271,10 +1158,9 @@ export default function Home() {
                 </div>
             </div>
             <div className="slider-area team-slider1">
-                <div className="swiper th-slider has-shadow" id="teamSlider1"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"}}}'>
-                    <div className="swiper-wrapper" style={{ width: '300px'}}>
-                        <div className="swiper-slide">
+                <div className="swiper  th-slider has-shadow  mySwiper  swiper-container" id="teamSlider1" ref={swiperRef}>
+                    <div className="swiper-wrapper" >
+                        <div className="swiper-slide  winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1289,7 +1175,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1304,7 +1190,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1319,7 +1205,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1334,7 +1220,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1349,7 +1235,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1364,7 +1250,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1379,7 +1265,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1394,7 +1280,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1409,7 +1295,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide">
+                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1425,16 +1311,20 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div><button data-slider-prev="#teamSlider1" className="slider-arrow slider-prev"><i
-                        className="far fa-arrow-left"></i></button> <button data-slider-next="#teamSlider1"
-                    className="slider-arrow slider-next"><i className="far fa-arrow-right"></i></button>
+                </div>
+                
+                      <div className="swiper-button-prev" onClick={handlePrev}></div>
+                       <div className="swiper-button-next" onClick={handleNext}></div>
             </div>
         </div>
     </section>
     
+
+
+
     {/* ====================================================game shop=============================================== */}
     <section className="space">
-        <div className="container" style={{ background: '#202225'}}>
+        <div className="container" style={{ background: '#0F1C23'}}>
             <div className="row justify-content-between align-items-center">
                 <div className="col-md-auto">
                     <div className="title-area custom-anim-left wow animated text-md-start text-center"
@@ -1445,14 +1335,12 @@ export default function Home() {
                 <div className="col-md-auto d-none d-md-block">
                     <div className="sec-btn">
                         <div className="icon-box"><button data-slider-prev="#productSlider1"
-                                className="slider-arrow style2 default"><i className="far fa-arrow-left"></i></button> <button
-                                data-slider-next="#productSlider1" className="slider-arrow style2 default"><i
-                                    className="far fa-arrow-right"></i></button></div>
+                                className="slider-arrow style2 default" onClick={handleShopPrev}><FontAwesomeIcon icon={faCaretLeft} /></button> <button
+                                data-slider-next="#productSlider1" className="slider-arrow style2 default" onClick={ handleShopNext }><FontAwesomeIcon icon={faCaretRight} /></button></div>
                     </div>
                 </div>
             </div>
-            <div className="swiper th-slider has-shadow" id="productSlider1"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
+            <div className="swiper th-slider has-shadow" id="productSlider1" ref={swiperShop}>
                 <div className="swiper-wrapper" style={{ width: '300px'}}>
                     <div className="swiper-slide"  style={{margin: "0 5px"}}>
                         <div className="th-product product-grid">
@@ -1577,25 +1465,46 @@ export default function Home() {
                 </div>
             </div>
             <div className="d-block d-md-none mt-40 text-center">
-                <div className="icon-box"><button data-slider-prev="#productSlider1" className="slider-arrow style2 default"><i
-                            className="far fa-arrow-left"></i></button> <button data-slider-next="#productSlider1"
-                        className="slider-arrow style2 default"><i className="far fa-arrow-right"></i></button></div>
+                <div className="icon-box"><button data-slider-prev="#productSlider1" className="slider-arrow style2 default" onClick={handleShopPrev}>
+                <FontAwesomeIcon icon={faCaretLeft} /></button> <button data-slider-next="#productSlider1"
+                        className="slider-arrow style2 default" onClick={handleShopNext}><FontAwesomeIcon icon={faCaretRight} /></button></div>
             </div>
         </div>
     </section>
-
-
+{/* -----------------------------------------------------------------bar ----------------------------------------------------- */}
+<div className="container th-container4">
+      <div className="cta-area-1">
+        <div className="cta-bg-shape-border">
+          
+        </div>
+        <div className="cta-wrap-bg bg-repeat" data-bg-src="assets/img/bg/jiji-bg.png" data-mask-src="assets/img/shape/cta-bg-shape1.svg">
+          <div className="cta-bg-img"><img src="/img/bg/cta-sec1-bg.png" alt="img" /></div>
+          <div className="cta-thumb"><img src="/img/normal/cta1-1.png" alt="img" /></div>
+        </div>
+        <div className="cta-wrap">
+          <div className="row">
+            <div className="col-xl-5">
+              <div className="title-area mb-0 custom-anim-left wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                <span className="sub-title"># World Best Gaming Site</span>
+                <h2 className="sec-title">Join Bame Esports to Become Next <span className="text-theme fw-medium">PRO Gamer Today !</span></h2>
+                <p className="mt-30 mb-30">Esports and gaming facilities require thoughtful consideration of various elements to create an environment that caters to the needs of gamers and enhances the overall gaming experience.</p>
+                <a href="contact.html" className="th-btn">JOIN COMMUNITY <i className="fa-solid fa-arrow-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
      {/* ==================================================news------------------------------------------------- */}
      <section className="" id="blog-sec">
-        <div className="container" style={{ background: 'black'}}>
+        <div className="container" >
             <div className="title-area text-center custom-anim-top wow animated" data-wow-duration="1.5s"
                 data-wow-delay="0.2s"><span className="sub-title"># Latest News</span>
                 <h2 className="sec-title">Stay Updated With Our Blog <span className="text-theme">!</span></h2>
             </div>
             <div className="slider-area">
-                <div className="swiper th-slider has-shadow" id="blogSlider1"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+                <div className="swiper th-slider has-shadow" id="blogSlider1" ref={swiperNews}>
                     <div className="swiper-wrapper">
                         <div className="swiper-slide" style={{ width: '300px' , margin: '0 5px'}}>
                             <div className="blog-card">
@@ -1683,48 +1592,84 @@ export default function Home() {
 
 
   {/* ======================================team======================================================================================== */}
-  <div className="client-area-1 overflow-hidden space" style={{ marginTop: '24px'}}>
+  <div className="client-area-1 overflow-hidden space">
         <div className="container-fluid p-0">
             <div className="swiper th-slider client-slider1"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"400":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"7"},"1300":{"slidesPerView":"9"}}, "spaceBetween": "0", "loop": "true"}'>
-                <div className="swiper-wrapper">
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-1.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-2.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-3.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-4.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-5.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-6.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-7.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-8.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-9.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-1.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-2.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-3.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-4.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-5.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-6.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-7.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-8.png"
-                                alt="Image"/></a></div>
-                    <div className="swiper-slide" style={{width: '150px'}}><a href="#" className="client-card"><img src="/img/client/1-9.png"
-                                alt="Image"/></a></div>
-                </div>
+                data-slider-options={{
+        breakpoints: {
+          0: { slidesPerView: 2 },
+          400: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          992: { slidesPerView: 4 },
+          1200: { slidesPerView: 7 },
+          1300: { slidesPerView: 9 }
+        },
+        spaceBetween: 0,
+        loop: true
+      }}>
+              
+                 <div class="photo-wrapper" id="photoWrapper">
+                            <div class="photo">
+                             <img src="/img/client/1-1.png"/>
+                             </div>
+                             <div class="photo">
+                            <img src="/img/client/1-2.png"/>
+                              </div>
+                           <div class="photo">
+                           <img src="/img/client/1-3.png"/>
+                           </div>
+                           <div class="photo">
+                          <img src="/img/client/1-3.png"/>
+                          </div>
+                          <div class="photo">
+                           <img src="/img/client/1-4.png"/>
+                           </div>
+                            <div class="photo">
+                              <img src="/img/client/1-5.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-6.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-7.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-8.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-9.png"/>
+                           </div>
+                           <div class="photo">
+                             <img src="/img/client/1-1.png"/>
+                             </div>
+                             <div class="photo">
+                            <img src="/img/client/1-2.png"/>
+                              </div>
+                           <div class="photo">
+                           <img src="/img/client/1-3.png"/>
+                           </div>
+                           <div class="photo">
+                          <img src="/img/client/1-3.png"/>
+                          </div>
+                          <div class="photo">
+                           <img src="/img/client/1-4.png"/>
+                           </div>
+                            <div class="photo">
+                              <img src="/img/client/1-5.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-6.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-7.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-8.png"/>
+                           </div>
+                           <div class="photo">
+                              <img src="/img/client/1-9.png"/>
+                           </div>
+                  </div>
             </div>
         </div>
     </div>
@@ -1734,7 +1679,7 @@ export default function Home() {
 
     <Footer/>
 
-    
+     </div>
     </>
   );
 }

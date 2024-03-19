@@ -1,35 +1,33 @@
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faFacebook} from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
   return (
     <>
         <footer class="footer-wrapper footer-layout2" data-bg-src="/img/bg/footer2-bg.png">
-        <div class="container">
+        <div class="container footer">
             <div class="text-center">
                 <div class="footer-top-shape bg-repeat" data-bg-src="/img/bg/jiji-bg.png"></div>
             </div>
         </div>
-        <div class="widget-area">
-            <div class="container">
+        <div class="widget-area ">
+            <div class="container ">
                 <div class="row justify-content-between">
                     <div class="col-md-6 col-xl-auto">
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
-                                <div class="about-logo"><a href="index.html"><span data-mask-src="assets/img/logo.svg"
+                                <div class="about-logo"><a href="index.html"><span data-mask-src="/img/logo.svg"
                                             class="logo-mask"></span> X-game</a>
                                 </div>
                                 <p class="about-text">Beyond esports tournaments, include a broader calendar of gaming
                                     events, conferences, and conventions.</p>
                                 <h3 class="widget_title">Follow <span class="text-theme">With Us:</span></h3>
                                 <div class="th-widget-contact">
-                                    <div class="th-social style-mask"><a class="facebook"
-                                            href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a
+                                    <div class="th-social style-mask"> <a
                                             class="twitter" href="https://www.twitter.com/"><img
                                                 src="/img/icon/x-twitter-icon.svg" alt="icon"/></a><a
                                             class="instagram" href="https://www.instagram.com/"><img
-                                                src="/img/icon/instagram-icon.svg" alt="icon"/> </a><a
-                                            class="linkedin" href="https://www.linkedin.com/"><i
-                                                class="fab fa-linkedin"></i></a> <a class="google-play"
+                                                src="/img/icon/instagram-icon.svg" alt="icon"/> </a> <a class="google-play"
                                             href="https://www.google.com/"><img
                                                 src="/img/icon/google-playstore-icon.svg" alt="icon"/></a></div>
                                 </div>

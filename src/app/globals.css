@@ -17637,7 +17637,9 @@ textarea.is-invalid {
     text-transform: capitalize;
     line-height: 24px;
     margin-top: -0.3em;
-    letter-spacing: 2px
+    letter-spacing: 2px;
+    padding-top: 50px;
+
 }
 
 .sub-title.h4 {
@@ -17984,7 +17986,8 @@ hr.title-line {
 
 .th-social a img {
     position: relative;
-    margin-top: -2px
+    margin-top: 10px;
+    margin-left:  12px;
 }
 
 .th-social a:last-child {
@@ -22076,7 +22079,8 @@ ol.wp-block-rss {
 }
 
 .header-top {
-    padding: 14.2px 0;
+    /* padding: 14.2px 0; */
+    padding: 5px 49px;
     background-color: var(--title-color)
 }
 
@@ -22600,8 +22604,8 @@ ol.wp-block-rss {
 }
 
 .widget-area {
-    padding-top: 90px;
-    padding-bottom: 90px
+    padding:  90px 30px 90px 30px;
+   
 }
 
 .sticky-footer {
@@ -24540,7 +24544,9 @@ ul.comment-list:has(>.th-comment-item ~ .th-comment-item):first-child>.th-post-c
     margin-bottom: 19px;
     margin-top: -0.2em
 }
-
+.home_main_box{
+     background-color: var(--black-color3);
+}
 .hero-text {
     margin-bottom: 40px;
     font-size: 18px
@@ -24556,9 +24562,10 @@ ul.comment-list:has(>.th-comment-item ~ .th-comment-item):first-child>.th-post-c
 
 .hero-cta-slider1 {
     margin-top: -300px;
-    margin-bottom: -50px;
+    margin-bottom: 50px;
     position: relative;
-    z-index: 2
+    z-index: 2;
+   
 }
 
 .hero-cta-slider1 .hero-shape-area {
@@ -30788,7 +30795,7 @@ span.select2-selection.select2-selection--single:focus {
     position: absolute;
     inset: 0;
     mix-blend-mode: color;
-    background: var(--theme-color)
+    background: none;
 }
 
 .feature-card .feature-card-title {
@@ -33934,7 +33941,7 @@ span.select2-selection.select2-selection--single:focus {
 
 .space,
 .space-bottom {
-    padding-bottom: var(--section-space)
+    padding-bottom: 30px;
 }
 
 .space-extra,
@@ -45991,3 +45998,80 @@ button.swiper-pagination-bullet {
      background-color: red;
 
 } */
+.word{
+    padding: 20px;
+}
+.client-area-1{
+     margin-top: 51px;
+     overflow: hidden;
+}
+.footer{
+     padding: 0;
+}
+.mobile_nav{
+     /* color: red; */
+     padding: 9px 0;
+     font-size: 33px;
+}
+
+.photo-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.photo {
+    border-radius: 16px;
+    /* border: 2px solid red; */
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+    padding: 10px 0 0 10px;
+
+    & img {
+        
+        object-fit: cover;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        bottom: -1rem;
+        left: -16rem;
+        background: linear-gradient(90deg, transparent, white, transparent);
+        width: 16rem;
+        opacity: 0;
+        transform: rotate(6deg);
+    }
+
+    &:hover::after {
+        left: 100%;
+        opacity: 0.15;
+        transition: inset 1s;
+    }
+
+    &:hover {
+        transform: scale(1.1) !important;
+    }
+
+    &.even {
+        transform: rotate(2deg);
+    }
+
+    &:not(.even) {
+        transform: rotate(-2deg);
+    }
+}
+
+
+.winer_card{
+     margin: 0 10px;
+     /* border: 3px solid orangered; */
+}
+
