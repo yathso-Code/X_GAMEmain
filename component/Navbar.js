@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleRight, faMagnifyingGlass,faBars } from '@fortawesome/free-solid-svg-icons'
-
+import $ from 'jquery';
 
 
 const Navbar = () => {
+ 
+ 
+
   return (
     <>
     <nav className='nav_bar'>
@@ -117,12 +120,12 @@ const Navbar = () => {
                     <div className="th-widget-contact">
                         <div className="th-social style-mask"><a className="facebook" href="https://www.facebook.com/"><i
                                     className="fab fa-facebook-f"></i></a> <a className="twitter"
-                                href="https://www.twitter.com/"><img src="assets/img/icon/x-twitter-icon.svg"
+                                href="https://www.twitter.com/"><img src="/img/icon/x-twitter-icon.svg"
                                     alt="icon"/></a><a className="instagram" href="https://www.instagram.com/"><img
-                                    src="assets/img/icon/instagram-icon.svg" alt="icon"/> </a><a className="linkedin"
+                                    src="/img/icon/instagram-icon.svg" alt="icon"/> </a><a className="linkedin"
                                 href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a> <a
                                 className="google-play" href="https://www.google.com/"><img
-                                    src="assets/img/icon/google-playstore-icon.svg" alt="icon"/></a></div>
+                                    src="/img/icon/google-playstore-icon.svg" alt="icon"/></a></div>
                     </div>
                 </div>
             </div>
@@ -131,7 +134,7 @@ const Navbar = () => {
                 <div className="recent-post-wrap">
                     <div className="recent-post">
                         <div className="media-img"><a href="blog-details.html"><img
-                                    src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"/></a></div>
+                                    src="/img/blog/recent-post-1-1.jpg" alt="Blog Image"/></a></div>
                         <div className="media-body">
                             <h4 className="post-title"><a className="text-inherit" href="blog-details.html">A Day in the Life of
                                     an Esports Event & Enjoy</a></h4>
@@ -141,7 +144,7 @@ const Navbar = () => {
                     </div>
                     <div className="recent-post">
                         <div className="media-img"><a href="blog-details.html"><img
-                                    src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"/></a></div>
+                                    src="/img/blog/recent-post-1-2.jpg" alt="Blog Image"/></a></div>
                         <div className="media-body">
                             <h4 className="post-title"><a className="text-inherit" href="blog-details.html">Strategies for
                                     Dominating Your Favorite Game</a></h4>
@@ -151,7 +154,7 @@ const Navbar = () => {
                     </div>
                     <div className="recent-post">
                         <div className="media-img"><a href="blog-details.html"><img
-                                    src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"/></a></div>
+                                    src="/img/blog/recent-post-1-3.jpg" alt="Blog Image"/></a></div>
                         <div className="media-body">
                             <h4 className="post-title"><a className="text-inherit" href="blog-details.html">Behind the Scenes of
                                     Your Favorite Game</a></h4>
