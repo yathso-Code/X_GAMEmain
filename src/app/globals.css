@@ -28732,7 +28732,7 @@ span.select2-selection.select2-selection--single:focus {
     background-clip: content-box, border-box;
     margin-bottom: 4px;
     position: relative  ;
-    margin: 3px;
+    margin: 0 10px;
 }
 
 .team-card .team-card-corner {

@@ -6,8 +6,7 @@ import $ from 'jquery';
 
 const Navbar = () => {
  
- 
-
+  
   return (
     <>
     <nav className='nav_bar'>

@@ -89,7 +89,7 @@ export default function Home() {
       loop: true,
       centeredSlides: true,
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: { 768: { slidesPerView: 1, spaceBetween: 9 }, 1024: { slidesPerView: 3, spaceBetween: 10 }, 1280: { slidesPerView: 5, spaceBetween: 15 } }
+      breakpoints: { 768: { slidesPerView: 1, spaceBetween: 15 }, 1024: { slidesPerView: 3, spaceBetween: 10 }, 1280: { slidesPerView: 5, spaceBetween: 15 } }
     });
     return () => swiper.destroy();
   }, []);
