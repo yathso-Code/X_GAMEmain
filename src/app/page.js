@@ -1,6 +1,6 @@
 "use client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightToBracket, faCaretLeft, faCaretRight} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRightToBracket, faCaretLeft, faCaretRight, faCartArrowDown, faHeart, faEye} from '@fortawesome/free-solid-svg-icons'
 import "./globals.css";
 import Navbar from "../../component/Navbar";
 import Image from "next/image";
@@ -48,9 +48,9 @@ export default function Home() {
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        768: { slidesPerView: 1, spaceBetween: 0 },
-        1024: { slidesPerView: 3, spaceBetween: 0 },
-        1280: { slidesPerView: 5, spaceBetween: 0 }
+        768: { slidesPerView: 1, spaceBetween: 10 },
+        1024: { slidesPerView: 3, spaceBetween: 15 },
+        1280: { slidesPerView: 5, spaceBetween: 20 }
       }
     });
 
@@ -89,7 +89,7 @@ export default function Home() {
       loop: true,
       centeredSlides: true,
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: { 768: { slidesPerView: 1, spaceBetween: 0 }, 1024: { slidesPerView: 3, spaceBetween: 0 }, 1280: { slidesPerView: 5, spaceBetween: 0 } }
+      breakpoints: { 768: { slidesPerView: 1, spaceBetween: 3 }, 1024: { slidesPerView: 3, spaceBetween: 9 }, 1280: { slidesPerView: 5, spaceBetween: 15 } }
     });
     return () => swiper.destroy();
   }, []);
@@ -98,7 +98,7 @@ export default function Home() {
   const handleNext = () => swiperRef.current?.swiper.slideNext();
 
   useEffect(() => {
-    const interval = setInterval(() => handleNext(), 2000);
+    const interval = setInterval(() => handleNext(), 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -1160,7 +1160,7 @@ export default function Home() {
             <div className="slider-area team-slider1">
                 <div className="swiper  th-slider has-shadow  mySwiper  swiper-container" id="teamSlider1" ref={swiperRef}>
                     <div className="swiper-wrapper" >
-                        <div className="swiper-slide  winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide  winer_card">
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1175,7 +1175,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1190,7 +1190,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1205,7 +1205,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card">
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1220,7 +1220,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1235,7 +1235,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1250,7 +1250,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1265,7 +1265,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card">
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1280,7 +1280,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1295,7 +1295,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide winer_card" style={{ width: '248px'}}>
+                        <div className="swiper-slide winer_card" >
                             <div className="th-team team-card">
                                 <div className="team-card-corner team-card-corner1"></div>
                                 <div className="team-card-corner team-card-corner2"></div>
@@ -1346,10 +1346,10 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_1.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn">
+                                <FontAwesomeIcon icon={faCartArrowDown} /> </a> <a href="wishlist.html"
+                                        className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /> </a> <a href="#QuickView"
+                                        className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /> </a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Gaming Headphone</a></h3><span
@@ -1361,10 +1361,10 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_2.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn">
+                                <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                        className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                        className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Gaming Mouse</a></h3><span
@@ -1376,10 +1376,9 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_3.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Gaming Keyboard</a></h3><span
@@ -1391,10 +1390,9 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_4.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Gaming Chair</a></h3><span
@@ -1406,10 +1404,9 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_5.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Microphone G9000</a></h3><span
@@ -1421,10 +1418,9 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_6.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Play Station Controller</a></h3>
@@ -1436,10 +1432,9 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_7.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">PlayStation VR</a></h3><span
@@ -1451,10 +1446,9 @@ export default function Home() {
                         <div className="th-product product-grid">
                             <div className="product-img"><img src="/img/product/product_1_8.png" alt="Product Image"/>
                                 <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"><i
-                                            className="far fa-cart-plus"></i></a> <a href="wishlist.html"
-                                        className="icon-btn"><i className="fas fa-heart"></i></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"><i className="fas fa-eye"></i></a></div>
+                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
+                                        className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
+                                        className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
                             </div>
                             <div className="product-content">
                                 <h3 className="product-title"><a href="shop-details.html">Wireless speaker</a></h3><span
@@ -1477,7 +1471,7 @@ export default function Home() {
         <div className="cta-bg-shape-border">
           
         </div>
-        <div className="cta-wrap-bg bg-repeat" data-bg-src="assets/img/bg/jiji-bg.png" data-mask-src="assets/img/shape/cta-bg-shape1.svg">
+        <div className="cta-wrap-bg bg-repeat" data-bg-src="assets/img/bg/jiji-bg.png" data-mask-src="/img/shape/cta-bg-shape1.svg">
           <div className="cta-bg-img"><img src="/img/bg/cta-sec1-bg.png" alt="img" /></div>
           <div className="cta-thumb"><img src="/img/normal/cta1-1.png" alt="img" /></div>
         </div>
@@ -1506,7 +1500,7 @@ export default function Home() {
             <div className="slider-area">
                 <div className="swiper th-slider has-shadow" id="blogSlider1" ref={swiperNews}>
                     <div className="swiper-wrapper">
-                        <div className="swiper-slide" style={{ width: '300px' , margin: '0 5px'}}>
+                        <div className="swiper-slide" style={{ width: '300px'}}>
                             <div className="blog-card">
                                 <div className="blog-img"><a href="blog-details.html"><img
                                             src="/img/blog/blog_1_1.jpg" alt="blog image"/></a></div>
@@ -1519,7 +1513,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide" style={{ width: '300px', margin: '0 5px'}}>
+                        <div className="swiper-slide" style={{ width: '300px'}}>
                             <div className="blog-card">
                                 <div className="blog-img"><a href="blog-details.html"><img
                                             src="/img/blog/blog_1_2.jpg" alt="blog image"/></a></div>
@@ -1532,7 +1526,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide" style={{ width: '300px', margin: '0 5px'}}>
+                        <div className="swiper-slide" style={{ width: '300px'}}>
                             <div className="blog-card">
                                 <div className="blog-img"><a href="blog-details.html"><img
                                             src="/img/blog/blog_1_3.jpg" alt="blog image"/></a></div>
@@ -1545,7 +1539,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide" style={{ width: '300px', margin: '0 5px'}}>
+                        <div className="swiper-slide" style={{ width: '300px'}}>
                             <div className="blog-card">
                                 <div className="blog-img"><a href="blog-details.html"><img
                                             src="/img/blog/blog_1_1.jpg" alt="blog image"/></a></div>
@@ -1558,7 +1552,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide" style={{ width: '300px', margin: '0 5px'}}>
+                        <div className="swiper-slide" style={{ width: '300px'}}>
                             <div className="blog-card">
                                 <div className="blog-img"><a href="blog-details.html"><img
                                             src="/img/blog/blog_1_2.jpg" alt="blog image"/></a></div>
@@ -1571,7 +1565,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="swiper-slide" style={{ width: '300px', margin: '0 5px'}}>
+                        <div className="swiper-slide" style={{ width: '300px'}}>
                             <div className="blog-card">
                                 <div className="blog-img"><a href="blog-details.html"><img
                                             src="/img/blog/blog_1_3.jpg" alt="blog image"/></a></div>

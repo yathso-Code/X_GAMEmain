@@ -6769,10 +6769,10 @@ fieldset:disabled .btn {
 
 @media (max-width:767.98px) {
     .modal-fullscreen-md-down {
-        width: 100vw;
+        width: 90vw;
         max-width: none;
         height: 100%;
-        margin: 0
+        margin: 0 20px
     }
 
     .modal-fullscreen-md-down .modal-content {
@@ -28731,7 +28731,7 @@ span.select2-selection.select2-selection--single:focus {
     background-clip: content-box, border-box;
     margin-bottom: 4px;
     position: relative  ;
-    margin: 5px;
+    margin: 3px;
 }
 
 .team-card .team-card-corner {
@@ -29435,6 +29435,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .blog-card {
+    margin: 0 20px;
     border-radius: 0px;
     background-color: transparent
 }
@@ -46071,7 +46072,8 @@ button.swiper-pagination-bullet {
 
 
 .winer_card{
-     margin: 0 10px;
+     margin: 0 4px;
+     width: 290px;
      /* border: 3px solid orangered; */
 }
 
