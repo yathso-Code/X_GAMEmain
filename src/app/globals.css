@@ -46127,3 +46127,18 @@ button.swiper-pagination-bullet {
   animation: rotBGimg 3.5s linear infinite;
 } */
 
+
+/* .nav_bar{
+     position: fixed;
+     width: 100vw;
+     top: 0;
+     left: 0;
+     z-index: 300;
+}  */
+.game_det{
+     border: 5px solid red;
+     width: 100vw;
+     height: 500px;
+     margin-top: 180px;
+     background-color: #080E1C;
+}

@@ -1,11 +1,20 @@
+"use client"
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleRight, faMagnifyingGlass,faBars } from '@fortawesome/free-solid-svg-icons'
 import $ from 'jquery';
+import { useState,  useEffect } from 'react';
 
 
 const Navbar = () => {
- 
+    const [iconSize, setIconSize] = useState('lg'); // Default size, you can adjust as needed
+
+    useEffect(() => {
+      // This effect runs once when the component mounts
+      // You can adjust the icon size here if needed
+      setIconSize('lg'); // Example: setting icon size to large (you can set it to any desired size)
+    }, []); // Empty dependency array ensures this effect only runs once on mount
+  
   
   return (
     <>
@@ -275,7 +284,7 @@ const Navbar = () => {
                         <div className="col-auto">
                             <nav className="main-menu d-none d-lg-inline-block">
                                 <ul>
-                                    <li className="menu-item-has-children"><Link href='/'>HOME <FontAwesomeIcon icon={faAngleDown} /></Link>
+                                    <li className="menu-item-has-children"><Link href='/'>HOME <FontAwesomeIcon size={iconSize} icon={faAngleDown} /></Link>
                                         <ul className="sub-menu">
                                             <li><a href="index.html">Home One</a></li>
                                             <li><a href="home-2.html">Home Two</a></li>

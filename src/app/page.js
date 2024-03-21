@@ -2,11 +2,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightToBracket, faCaretLeft, faCaretRight, faCartArrowDown, faHeart, faEye} from '@fortawesome/free-solid-svg-icons'
 import "./globals.css";
-import Navbar from "../../component/Navbar";
+import Navbar from "../component/Navbar";
 import Image from "next/image";
 import React, { useEffect , useRef} from 'react';
 import 'swiper/swiper-bundle.css';
-import Footer from '../../component/Footer';
+import Footer from '../component/Footer';
 import '../../node_modules/swiper/swiper-bundle.min.css'; // Import Swiper CSS
 import Swiper from 'swiper';
 // import Swiper from '../../node_modules/swiper/swiper-bundle.min.js'; // Import Swiper JS
