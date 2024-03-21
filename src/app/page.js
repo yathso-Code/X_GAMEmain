@@ -9,7 +9,7 @@ import 'swiper/swiper-bundle.css';
 import Footer from '../component/Footer';
 import '../../node_modules/swiper/swiper-bundle.min.css'; // Import Swiper CSS
 import Swiper from 'swiper';
-// import Swiper from '../../node_modules/swiper/swiper-bundle.min.js'; // Import Swiper JS
+
 
 
 export default function Home() {
