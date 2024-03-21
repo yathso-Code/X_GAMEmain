@@ -173,22 +173,15 @@ const Navbar2 = () => {
             </div>
         </div>
     </div>
-    <div class="color-scheme-wrap active"><button class="switchIcon"><i class="fa-solid fa-palette"></i></button>
-        <h4 class="color-scheme-wrap-title"><i class="far fa-palette"></i> Color Switcher</h4>
-        <div class="color-switch-btns"><button data-color="#6240CF"><i class="fa-solid fa-droplet"></i></button> <button
-                data-color="#FFBE18"><i class="fa-solid fa-droplet"></i></button> <button data-color="#24FFF2"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#45F882"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#FF7E02"><i
-                    class="fa-solid fa-droplet"></i></button></div>
-    </div>
+    
     <header class="th-header header-default">
         <div class="sticky-wrapper">
             <div class="menu-area">
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index.html"><span data-mask-src="assets/img/logo.svg"
-                                        class="logo-mask"></span> <img src="/img/logo.svg" alt="Bame"/></a></div>
+                            <div class="header-logo"><Link href="index.html"><span 
+                                        class="logo-mask">GAME</span> <img src="https://plsc.cards/images/Logo.png" alt="PLSC"/></Link></div>
                         </div>
                         <div class="col-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
@@ -236,13 +229,11 @@ const Navbar2 = () => {
                                 </ul>
                             </nav>
                             <div class="header-button d-flex d-lg-none"><button type="button"
-                                    class="th-menu-toggle"><span class="btn-border"></span><i
-                                        class="far fa-bars"></i></button></div>
+                                    class="th-menu-toggle"><span class="btn-border"></span><FontAwesomeIcon icon={faBars} className='mobile_nav' /> </button></div>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><button type="button" class="simple-icon searchBoxToggler"><i
-                                        class="far fa-search"></i></button> <button type="button"
-                                    class="simple-icon sideMenuInfo"><i class="fa-solid fa-bars"></i></button>
+                            <div class="header-button"><button type="button" class="simple-icon searchBoxToggler"><FontAwesomeIcon icon={faMagnifyingGlass} /></button> <button type="button"
+                                    class="simple-icon sideMenuInfo"><FontAwesomeIcon icon={faBars} /></button>
                                 <div class="d-xxl-block d-none"><a href="contact.html" class="th-btn"><i
                                             class="fa-brands fa-twitch me-1"></i> Live Streaming</a></div>
                             </div>

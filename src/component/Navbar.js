@@ -253,7 +253,7 @@ const Navbar = () => {
                         <div className="header-links">
                             <ul>
                                 <li>
-                                    <div className="header-notice">Welcome to our <Link href='/'>x-game</Link> Esports team
+                                    <div className="header-notice">Welcome to our <Link href='/'>PLSC Games</Link> Esports team
                                     </div>
                                 </li>
                                
@@ -279,7 +279,9 @@ const Navbar = () => {
                 <div className="container">
                     <div className="row align-items-center justify-content-between">
                         <div className="col-auto">
-                            <div className="header-logo"><Link href="/">X-Game </Link></div>
+                            <div className="header-logo"><Link href="index.html"><span 
+                                        class="logo-mask">GAME</span> <img src="https://plsc.cards/images/Logo.png" alt="PLSC"/></Link>
+                                        </div>
                         </div>
                         <div className="col-auto">
                             <nav className="main-menu d-none d-lg-inline-block">

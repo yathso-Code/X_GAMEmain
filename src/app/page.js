@@ -68,9 +68,9 @@ export default function Home() {
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        768: { slidesPerView: 1, spaceBetween: 0 },
-        1024: { slidesPerView: 3, spaceBetween: 0 },
-        1280: { slidesPerView: 5, spaceBetween: 0 }
+        768: { slidesPerView: 1, spaceBetween: 5 },
+        1024: { slidesPerView: 3, spaceBetween: 5 },
+        1280: { slidesPerView: 5, spaceBetween: 5 }
       }
     });
 
@@ -202,537 +202,9 @@ export default function Home() {
       </div>
       {/* ========================================hero banner end====================================================== */}
 
-      <div
-        className="swiper th-slider hero-cta-slider1"
-        id="heroSlider1"
-        data-slider-options='{"effect":"fade"}'
-        style={{zIndex: '100' }}
-        
-      >
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">
-            <div className="hero-cta-inner">
-              <div className="container th-container2">
-                <div className="hero-shape-area">
-                  <div className="hero-bg-shape">
-                    <div
-                      className="hero-bg-border-anime"
-                      style={{ backgroundImage: `url('/hero-bg-shape.png')` }}
-                      // data-mask-src="assets/img/hero/hero-bg-shape.png"
-                    ></div>
-                    <svg
-                      viewBox="0 0 1600 520"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1599 30V490C1599 506.016 1586.02 519 1570 519H1062.43C1054.74 519 1047.36 515.945 1041.92 510.506L1009.49 478.08C1003.68 472.266 995.795 469 987.574 469H612.426C604.205 469 596.32 472.266 590.506 478.08L558.08 510.506C552.641 515.945 545.265 519 537.574 519H30C13.9837 519 1 506.016 1 490V30C1 13.9837 13.9837 1 30 1H400H537.574C545.265 1 552.641 4.05535 558.08 9.4939L590.506 41.9203C596.32 47.7339 604.205 51 612.426 51H987.574C995.795 51 1003.68 47.7339 1009.49 41.9203L1041.92 9.4939C1047.36 4.05535 1054.74 1 1062.43 1H1200H1570C1586.02 1 1599 13.9837 1599 30Z"
-                        fill="black"
-                        stroke="url(#paint0_linear1_47_22)"
-                        stroke-width="2"
-                      />
-                      <mask
-                        id="mask0_47_22"
-                        style={{ maskType: "alpha" }}
-                        maskUnits="userSpaceOnUse"
-                        x="0"
-                        y="0"
-                      >
-                        <path
-                          d="M1600 490V30C1600 13.4315 1586.57 0 1570 0H1200H1062.43C1054.47 0 1046.84 3.1607 1041.21 8.7868L1008.79 41.2132C1003.16 46.8393 995.53 50 987.574 50H612.426C604.47 50 596.839 46.8393 591.213 41.2132L558.787 8.7868C553.161 3.16071 545.53 0 537.574 0H400H30C13.4315 0 0 13.4314 0 30V490C0 506.569 13.4315 520 30 520H537.574C545.53 520 553.161 516.839 558.787 511.213L591.213 478.787C596.839 473.161 604.47 470 612.426 470H987.574C995.53 470 1003.16 473.161 1008.79 478.787L1041.21 511.213C1046.84 516.839 1054.47 520 1062.43 520H1570C1586.57 520 1600 506.569 1600 490Z"
-                          fill="black"
-                        />
-                      </mask>
-                      <g mask="url(#mask0_47_22)">
-                        <g filter="url(#filter0_f_47_22)">
-                          <circle
-                            cx="1413"
-                            cy="314"
-                            r="287"
-                            fill="var(--theme-color2)"
-                            fill-opacity="0.2"
-                          />
-                        </g>
-                        <g filter="url(#filter01_f_47_22)">
-                          <circle
-                            cx="231"
-                            cy="172"
-                            r="229"
-                            fill="var(--theme-color)"
-                            fill-opacity="0.5"
-                          />
-                        </g>
-                      </g>
-                      <defs>
-                        <filter
-                          id="filter0_f_47_22"
-                          x="566"
-                          y="-533"
-                          width="1694"
-                          height="1694"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="BackgroundImageFix"
-                            result="shape"
-                          />
-                          <feGaussianBlur
-                            stdDeviation="280"
-                            result="effect1_foregroundBlur_47_22"
-                          />
-                        </filter>
-                        <filter
-                          id="filter01_f_47_22"
-                          x="-558"
-                          y="-617"
-                          width="1578"
-                          height="1578"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="BackgroundImageFix"
-                            result="shape"
-                          />
-                          <feGaussianBlur
-                            stdDeviation="280"
-                            result="effect1_foregroundBlur_47_22"
-                          />
-                        </filter>
-                        <linearGradient
-                          id="paint0_linear1_47_22"
-                          x1="0"
-                          y1="0"
-                          x2="1600"
-                          y2="520"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop offset="0" stop-color="var(--theme-color)" />
-                          <stop offset="1" stop-color="var(--theme-color2)" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <div className="verses-thumb d-xl-none d-block">
-                      <img
-                        src="/game-vs1.svg"
-                        alt="tournament image"
-                      />
-                    </div>
-                    <div
-                      className="hero-img1 z-index-common"
-                      data-ani="slideinleft"
-                      data-ani-delay="0.4s"
-                    >
-                      <img src="/hero-1-1.png" alt="Image" />
-                    </div>
-                    <div
-                      className="hero-img2 z-index-common"
-                      data-ani="slideinright"
-                      data-ani-delay="0.4s"
-                    >
-                      <img src="/hero-1-2.png" alt="Image" />
-                    </div>
-                  </div>
-                  <div className="title-area mb-0">
-                    <h2
-                      className="sec-title text-white custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.1s"
-                    >
-                      Join The Big Tournaments
-                    </h2>
-                    <p
-                      className="mt-30 mb-30 custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.2s"
-                    >
-                      1Beyond esports tournaments, include a broader calendar of
-                      gaming events, conferences, and conventions. and connect
-                      with each other.
-                    </p>
-                    <div
-                      className="btn-group custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.2s"
-                    >
-                      <a href="about.html" className="th-btn style-border">
-                        <span className="btn-border">
-                          JOIN NOW
-                      
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <div className="swiper-slide">
-            <div className="hero-cta-inner">
-              <div className="container th-container2">
-                <div className="hero-shape-area">
-                  <div className="hero-bg-shape">
-                    <div
-                      className="hero-bg-border-anime"
-                      style={{ backgroundImage: `url('/hero-bg-shape.png')` }}
-                      // data-mask-src="assets/img/hero/hero-bg-shape.png"
-                    ></div>
-                    <svg
-                      viewBox="0 0 1600 520"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1599 30V490C1599 506.016 1586.02 519 1570 519H1062.43C1054.74 519 1047.36 515.945 1041.92 510.506L1009.49 478.08C1003.68 472.266 995.795 469 987.574 469H612.426C604.205 469 596.32 472.266 590.506 478.08L558.08 510.506C552.641 515.945 545.265 519 537.574 519H30C13.9837 519 1 506.016 1 490V30C1 13.9837 13.9837 1 30 1H400H537.574C545.265 1 552.641 4.05535 558.08 9.4939L590.506 41.9203C596.32 47.7339 604.205 51 612.426 51H987.574C995.795 51 1003.68 47.7339 1009.49 41.9203L1041.92 9.4939C1047.36 4.05535 1054.74 1 1062.43 1H1200H1570C1586.02 1 1599 13.9837 1599 30Z"
-                        fill="black"
-                        stroke="url(#paint0_linear2_47_22)"
-                        stroke-width="2"
-                      />
-                      <mask
-                      id="mask0_47_22"
-                      style={{ maskType: "alpha" }}
-                      maskUnits="userSpaceOnUse"
-                      x="0"
-                      y="0"
-                    >
-                        <path
-                          d="M1600 490V30C1600 13.4315 1586.57 0 1570 0H1200H1062.43C1054.47 0 1046.84 3.1607 1041.21 8.7868L1008.79 41.2132C1003.16 46.8393 995.53 50 987.574 50H612.426C604.47 50 596.839 46.8393 591.213 41.2132L558.787 8.7868C553.161 3.16071 545.53 0 537.574 0H400H30C13.4315 0 0 13.4314 0 30V490C0 506.569 13.4315 520 30 520H537.574C545.53 520 553.161 516.839 558.787 511.213L591.213 478.787C596.839 473.161 604.47 470 612.426 470H987.574C995.53 470 1003.16 473.161 1008.79 478.787L1041.21 511.213C1046.84 516.839 1054.47 520 1062.43 520H1570C1586.57 520 1600 506.569 1600 490Z"
-                          fill="black"
-                        />
-                      </mask>
-                      <g mask="url(#mask1_47_22)">
-                        <g filter="url(#filter1_f_47_22)">
-                          <circle
-                            cx="1413"
-                            cy="314"
-                            r="287"
-                            fill="var(--theme-color2)"
-                            fill-opacity="0.2"
-                          />
-                        </g>
-                        <g filter="url(#filter02_f_47_22)">
-                          <circle
-                            cx="231"
-                            cy="172"
-                            r="229"
-                            fill="var(--theme-color)"
-                            fill-opacity="0.5"
-                          />
-                        </g>
-                      </g>
-                      <defs>
-                        <filter
-                          id="filter1_f_47_22"
-                          x="566"
-                          y="-533"
-                          width="1694"
-                          height="1694"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="BackgroundImageFix"
-                            result="shape"
-                          />
-                          <feGaussianBlur
-                            stdDeviation="280"
-                            result="effect1_foregroundBlur_47_22"
-                          />
-                        </filter>
-                        <filter
-                          id="filter02_f_47_22"
-                          x="-558"
-                          y="-617"
-                          width="1578"
-                          height="1578"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="BackgroundImageFix"
-                            result="shape"
-                          />
-                          <feGaussianBlur
-                            stdDeviation="280"
-                            result="effect1_foregroundBlur_47_22"
-                          />
-                        </filter>
-                        <linearGradient
-                          id="paint0_linear2_47_22"
-                          x1="0"
-                          y1="0"
-                          x2="1600"
-                          y2="520"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop offset="0" stop-color="var(--theme-color)" />
-                          <stop offset="1" stop-color="var(--theme-color2)" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <div className="verses-thumb d-xl-none d-block">
-                      <img
-                        src="/game-vs1.svg"
-                        alt="tournament image"
-                      />
-                    </div>
-                    <div
-                      className="hero-img1 z-index-common"
-                      data-ani="slideinleft"
-                      data-ani-delay="0.4s"
-                    >
-                      <img src="/hero-1-3.png" alt="Image" />
-                    </div>
-                    <div
-                      className="hero-img2 z-index-common"
-                      data-ani="slideinright"
-                      data-ani-delay="0.4s"
-                    >
-                      <img src="/hero-1-4.png" alt="Image" />
-                    </div>
-                  </div>
-                  <div className="title-area mb-0">
-                    <h2
-                      className="sec-title text-white custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.1s"
-                    >
-                      Join The Big Tournaments
-                    </h2>
-                    <p
-                      className="mt-30 mb-30 custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.2s"
-                    >
-                      Beyond esports tournaments, include a broader calendar of
-                      gaming events, conferences, and conventions. and connect
-                      with each other.
-                    </p>
-                    <div
-                      className="btn-group custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.2s"
-                    >
-                      <a href="about.html" className="th-btn style-border">
-                        <span className="btn-border">
-                          JOIN NOWf
-                        
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="swiper-slide">
-            <div className="hero-cta-inner">
-              <div className="container th-container2">
-                <div className="hero-shape-area">
-                  <div className="hero-bg-shape">
-                    <div
-                      className="hero-bg-border-anime"
-                      style={{ backgroundImage: `url('/hero-bg-shape.png')` }}
-                      // data-mask-src="assets/img/hero/hero-bg-shape.png"
-                    ></div>
-                    <svg
-                      viewBox="0 0 1600 520"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1599 30V490C1599 506.016 1586.02 519 1570 519H1062.43C1054.74 519 1047.36 515.945 1041.92 510.506L1009.49 478.08C1003.68 472.266 995.795 469 987.574 469H612.426C604.205 469 596.32 472.266 590.506 478.08L558.08 510.506C552.641 515.945 545.265 519 537.574 519H30C13.9837 519 1 506.016 1 490V30C1 13.9837 13.9837 1 30 1H400H537.574C545.265 1 552.641 4.05535 558.08 9.4939L590.506 41.9203C596.32 47.7339 604.205 51 612.426 51H987.574C995.795 51 1003.68 47.7339 1009.49 41.9203L1041.92 9.4939C1047.36 4.05535 1054.74 1 1062.43 1H1200H1570C1586.02 1 1599 13.9837 1599 30Z"
-                        fill="black"
-                        stroke="url(#paint0_linear3_47_22)"
-                        stroke-width="2"
-                      />
-                      <mask
-                          id="mask0_47_22"
-                          style={{ maskType: "alpha" }}
-                          maskUnits="userSpaceOnUse"
-                          x="0"
-                          y="0"
-                         >
-                        <path
-                          d="M1600 490V30C1600 13.4315 1586.57 0 1570 0H1200H1062.43C1054.47 0 1046.84 3.1607 1041.21 8.7868L1008.79 41.2132C1003.16 46.8393 995.53 50 987.574 50H612.426C604.47 50 596.839 46.8393 591.213 41.2132L558.787 8.7868C553.161 3.16071 545.53 0 537.574 0H400H30C13.4315 0 0 13.4314 0 30V490C0 506.569 13.4315 520 30 520H537.574C545.53 520 553.161 516.839 558.787 511.213L591.213 478.787C596.839 473.161 604.47 470 612.426 470H987.574C995.53 470 1003.16 473.161 1008.79 478.787L1041.21 511.213C1046.84 516.839 1054.47 520 1062.43 520H1570C1586.57 520 1600 506.569 1600 490Z"
-                          fill="black"
-                        />
-                      </mask>
-                      <g mask="url(#mask2_47_22)">
-                        <g filter="url(#filter3_f_47_22)">
-                          <circle
-                            cx="1413"
-                            cy="314"
-                            r="287"
-                            fill="var(--theme-color2)"
-                            fill-opacity="0.2"
-                          />
-                        </g>
-                        <g filter="url(#filter03_f_47_22)">
-                          <circle
-                            cx="231"
-                            cy="172"
-                            r="229"
-                            fill="var(--theme-color)"
-                            fill-opacity="0.5"
-                          />
-                        </g>
-                      </g>
-                      <defs>
-                        <filter
-                          id="filter3_f_47_22"
-                          x="566"
-                          y="-533"
-                          width="1694"
-                          height="1694"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="BackgroundImageFix"
-                            result="shape"
-                          />
-                          <feGaussianBlur
-                            stdDeviation="280"
-                            result="effect1_foregroundBlur_47_22"
-                          />
-                        </filter>
-                        <filter
-                          id="filter03_f_47_22"
-                          x="-558"
-                          y="-617"
-                          width="1578"
-                          height="1578"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="BackgroundImageFix"
-                            result="shape"
-                          />
-                          <feGaussianBlur
-                            stdDeviation="280"
-                            result="effect1_foregroundBlur_47_22"
-                          />
-                        </filter>
-                        <linearGradient
-                          id="paint0_linear3_47_22"
-                          x1="0"
-                          y1="0"
-                          x2="1600"
-                          y2="520"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop offset="0" stop-color="var(--theme-color)" />
-                          <stop offset="1" stop-color="var(--theme-color2)" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <div className="verses-thumb d-xl-none d-block">
-                      <img
-                        src="/game-vs1.svg"
-                        alt="tournament image"
-                      />
-                    </div>
-                    <div
-                      className="hero-img1 z-index-common"
-                      data-ani="slideinleft"
-                      data-ani-delay="0.4s"
-                    >
-                      <img src="/hero-1-5.png" alt="Image" />
-                    </div>
-                    <div
-                      className="hero-img2 z-index-common"
-                      data-ani="slideinright"
-                      data-ani-delay="0.4s"
-                    >
-                      <img src="/hero-1-6.png" alt="Image" />
-                    </div>
-                  </div>
-                  <div className="title-area mb-0">
-                    <h2
-                      className="sec-title text-white custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.1s"
-                    >
-                      Join The Big Tournaments
-                    </h2>
-                    <p
-                      className="mt-30 mb-30 custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.2s"
-                    >
-                      Beyond esports tournaments, include a broader calendar of
-                      gaming events, conferences, and conventions. and connect
-                      with each other.
-                    </p>
-                    <div
-                      className="btn-group custom-anim-top wow animated"
-                      data-wow-duration="1.3s"
-                      data-wow-delay="0.2s"
-                    >
-                      <a href="about.html" className="th-btn style-border">
-                        <span className="btn-border">
-                          JOIN NOW
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-        </div>
-
-        <div className="slider-pagination"></div>
-      </div>
 
 
-
-
-      
-
-
-
-
-    {/* ============================================about ower game============================================== */}
+    {/* =========================================# About Our Gaming Site============================================== */}
     <div className="overflow-hidden space" id="about-sec">
         <div className="about-bg-img shape-mockup" data-top="0" data-left="0"><img src="about-bg1.png"
                  alt="img"/></div>
@@ -790,7 +262,10 @@ export default function Home() {
             </div>
         </div>
     </div>
-       {/* ----------------------------------sliding bar ---------------------------------------------------- */}
+
+
+
+       {/* -------------------------------# Releases The Latest Game ---------------------------------------------------- */}
        
        <section className="overflow-hidden slide">
         <div className="container th-container2 "  >
@@ -925,12 +400,12 @@ export default function Home() {
             </div>
         </div>
     </section>
-     {/* -------------------------------------#world------------------------------------------------------------------- */}
 
 
+     {/* ------------------------------# World Best Facilities Game------------------------------------------------------------------- */}
 
      <section className="space">
-      <div className="container" style={{background: '#07090d'}}>
+      <div className="container" style={{background: '#0F1C23'}}>
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="title-area text-center custom-anim-top wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
@@ -986,169 +461,13 @@ export default function Home() {
       </div>
     </section>
 
-
-
-    {/* =====================================================#stream=================================================== */}
-    <section className="space bg-top-center" 
-      style={{ backgroundImage: `url('/tournament-sec1-bg.png')`}}
-    // data-bg-src="assets/img/bg/tournament-sec1-bg.png"
-    >
-        <div className="container">
-            <div className="row justify-content-between">
-                <div className="col-lg-auto">
-                    <div className="title-area text-lg-start text-center custom-anim-left wow animated"
-                        data-wow-duration="1.5s" data-wow-delay="0.2s"><span className="sub-title"># Game Streaming
-                            Battle</span>
-                        <h2 className="sec-title">Our Gaming Tournaments <span className="text-theme">!</span></h2>
-                    </div>
-                </div>
-                <div className="col-lg-auto">
-                    <div className="sec-btn custom-anim-right wow animated" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                        <div className="tournament-filter-btn filter-menu filter-menu-active"><button data-filter="*"
-                                className="tab-btn active" type="button">ALL MATCH</button> <button data-filter=".cat1"
-                                className="tab-btn" type="button">UPCOMING MATCH</button> <button data-filter=".cat2"
-                                className="tab-btn" type="button">FINISHED MATCH</button></div>
-                    </div>
-                </div>
-            </div>
-            <div className="row gy-4 filter-active">
-                <div className="col-12 filter-item cat1">
-                    <div className="tournament-card gradient-border">
-                        <div className="tournament-card-img"><img src="/img/tournament/1-1.png"
-                                alt="tournament image"/> <img src="/img/tournament/game-vs1.svg"
-                                alt="tournament image"/> <img src="/img/tournament/1-2.png" alt="tournament image"/>
-                        </div>
-                        <div className="tournament-card-content">
-                            <div className="tournament-card-details">
-                                <div className="tournament-card-meta"><span className="tournament-card-tag">Upcoming</span>
-                                    <span className="tournament-card-score gradient-border">0 / 0</span></div>
-                                <h3 className="tournament-card-title"><a href="tournament-details.html">Pro Player VS Lion
-                                        King</a></h3>
-                                <p className="tournament-card-date">23 December, 2024 <span className="text-theme">6:00
-                                        PM</span></p>
-                                <div className="th-social"><a href="https://www.youtube.com/"><i
-                                            className="fab fa-youtube"></i>Youtube</a> <a href="tournament-details.html"><i
-                                            className="fa-brands fa-twitch"></i>Twitch</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-12 filter-item cat2">
-                    <div className="tournament-card gradient-border">
-                        <div className="tournament-card-img"><img src="/img/tournament/1-3.png"
-                                alt="tournament image"/> <img src="/img/tournament/game-vs1.svg"
-                                alt="tournament image"/> <img src="/img/tournament/1-4.png" alt="tournament image"/>
-                        </div>
-                        <div className="tournament-card-content">
-                            <div className="tournament-card-details">
-                                <div className="tournament-card-meta"><span className="tournament-card-tag">Finished</span>
-                                    <span className="tournament-card-score gradient-border">20 / 22</span></div>
-                                <h3 className="tournament-card-title"><a href="tournament-details.html">Assassin King VS
-                                        Cyberpunk</a></h3>
-                                <p className="tournament-card-date">20 December, 2024 <span className="text-theme">6:00
-                                        PM</span></p>
-                                <div className="th-social"><a href="https://www.youtube.com/"><i
-                                            className="fab fa-youtube"></i>Youtube</a> <a href="tournament-details.html"><i
-                                            className="fa-brands fa-twitch"></i>Twitch</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-12 filter-item cat1">
-                    <div className="tournament-card gradient-border">
-                        <div className="tournament-card-img"><img src="/img/tournament/1-5.png"
-                                alt="tournament image"/> <img src="/img/tournament/game-vs1.svg"
-                                alt="tournament image"/> <img src="/img/tournament/1-6.png" alt="tournament image"/>
-                        </div>
-                        <div className="tournament-card-content">
-                            <div className="tournament-card-details">
-                                <div className="tournament-card-meta"><span className="tournament-card-tag">Upcoming</span>
-                                    <span className="tournament-card-score gradient-border">0 / 0</span></div>
-                                <h3 className="tournament-card-title"><a href="tournament-details.html">Team Gorilla VS
-                                        Badgamer</a></h3>
-                                <p className="tournament-card-date">23 December, 2024 <span className="text-theme">6:10
-                                        PM</span></p>
-                                <div className="th-social"><a href="https://www.youtube.com/"><i
-                                            className="fab fa-youtube"></i>Youtube</a> <a href="tournament-details.html"><i
-                                            className="fa-brands fa-twitch"></i>Twitch</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     {/* ===================================================sliding  image================================================
-     <div className="container-fluid p-0">
-        <div className="gallery-area-1 overflow-hidden text-center">
-            <div className="slider-area gallery-slider1">
-                <div className="swiper th-slider" id="gallerySlider1"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}},"effect":"coverflow","coverflowEffect":{"rotate":"0","stretch":"0","depth":"150","modifier":"1"},"centeredSlides":"true"}'>
-                    <div className="swiper-wrapper">
-                        <div className="swiper-slide gallery-wrap1">
-                            <div className="th-video"><img src="/img/video/1-1.png" alt="img"/> <a
-                                    href="/img/video/1-1.png" className="play-btn popup-image style3"><i
-                                        className="fa-solid fa-arrow-up-right"></i></a></div>
-                        </div>
-                        <div className="swiper-slide gallery-wrap1">
-                            <div className="th-video"><img src="/img/video/1-2.png" alt="img"/> <a
-                                    href="/img/video/1-2.png" className="play-btn popup-image style3"><i
-                                        className="fa-solid fa-arrow-up-right"></i></a></div>
-                        </div>
-                        <div className="swiper-slide gallery-wrap1">
-                            <div className="th-video"><img src="/img/video/1-3.png" alt="img"/> <a
-                                    href="/img/video/1-3.png" className="play-btn popup-image style3"><i
-                                        className="fa-solid fa-arrow-up-right"></i></a></div>
-                        </div>
-                        <div className="swiper-slide gallery-wrap1">
-                            <div className="th-video"><img src="/img/video/1-1.png" alt="img"/> <a
-                                    href="/img/video/1-1.png" className="play-btn popup-image style3"><i
-                                        className="fa-solid fa-arrow-up-right"></i></a></div>
-                        </div>
-                        <div className="swiper-slide gallery-wrap1">
-                            <div className="th-video"><img src="/img/video/1-2.png" alt="img"/> <a
-                                    href="/img/video/1-2.png" className="play-btn popup-image style3"><i
-                                        className="fa-solid fa-arrow-up-right"></i></a></div>
-                        </div>
-                        <div className="swiper-slide gallery-wrap1">
-                            <div className="th-video"><img src="/img/video/1-3.png" alt="img"/> <a
-                                    href="/img/video/1-3.png" className="play-btn popup-image style3"><i
-                                        className="fa-solid fa-arrow-up-right"></i></a></div>
-                        </div>
-                    </div>
-                </div><button data-slider-prev="#gallerySlider1" className="slider-arrow slider-prev"><i
-                        className="fas fa-angle-left"></i></button> <button data-slider-next="#gallerySlider1"
-                    className="slider-arrow slider-next"><i className="fas fa-angle-right"></i></button>
-            </div>
-        </div>
-    </div>
-
-
- */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+    
+  
+    {/* ------------------------------------# Top World Class Gamer----------------------------------------------------------------------------------------- */}
     <section className="team-sec-1 space">
         <div className="team-shape1-1 shape-mockup" data-top="0" data-right="0"><img src="/img/bg/team-sec1-bg.png"
                 alt="img"/></div>
-        <div className="container th-container3" style={{background: 'black'}}>
+        <div className="container th-container3" style={{background: '#0F1C23'}}>
             <div className="row justify-content-center">
                 <div className="col-xl-6 col-lg-7 col-md-8">
                     <div className="title-area text-center custom-anim-top wow animated" data-wow-duration="1.5s"
@@ -1341,120 +660,117 @@ export default function Home() {
                 </div>
             </div>
             <div className="swiper th-slider has-shadow" id="productSlider1" ref={swiperShop}>
-                <div className="swiper-wrapper" style={{ width: '300px'}}>
-                    <div className="swiper-slide"  style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_1.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn">
-                                <FontAwesomeIcon icon={faCartArrowDown} /> </a> <a href="wishlist.html"
-                                        className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /> </a> <a href="#QuickView"
-                                        className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /> </a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Gaming Headphone</a></h3><span
-                                    className="price">$177.85</span>
-                            </div>
-                        </div>
+                <div className="swiper-wrapper" >
+                    <div className="swiper-slide"  >
+                                 <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-1.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-1.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">The Hunter Killer</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">$10.00</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_2.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn">
-                                <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                        className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Gaming Mouse</a></h3><span
-                                    className="price">$120.00</span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-4.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-4.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">League of Legends</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">$10.00</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_3.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Gaming Keyboard</a></h3><span
-                                    className="price">$96.85</span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-2.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-2.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">Net Remaining Monies</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">Free</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_4.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Gaming Chair</a></h3><span
-                                    className="price">$08.85<del>$06.99</del></span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-3.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-3.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">Duty Balck Ops</a></h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">$10.00</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_5.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Microphone G9000</a></h3><span
-                                    className="price">$32.85</span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-4.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-4.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">League of Legends</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">$10.00</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_6.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Play Station Controller</a></h3>
-                                <span className="price">$30.85</span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-2.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-2.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">Net Remaining Monies</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">Free</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_7.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">PlayStation VR</a></h3><span
-                                    className="price">$232.85</span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-2.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-2.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">Net Remaining Monies</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">Free</span></p>
+                                    </div>
+                                </div>
                     </div>
                     <div className="swiper-slide" style={{margin: "0 5px"}}>
-                        <div className="th-product product-grid">
-                            <div className="product-img"><img src="/img/product/product_1_8.png" alt="Product Image"/>
-                                <div className="overlay gradient-border"></div>
-                                <div className="actions"><a href="cart.html" className="icon-btn"> <FontAwesomeIcon icon={faCartArrowDown} /></a> <a href="wishlist.html"
-                                        className="icon-btn"> <FontAwesomeIcon icon={faHeart}  /></a> <a href="#QuickView"
-                                        className="icon-btn popup-content"> <FontAwesomeIcon icon={faEye}  /></a></div>
-                            </div>
-                            <div className="product-content">
-                                <h3 className="product-title"><a href="shop-details.html">Wireless speaker</a></h3><span
-                                    className="price">$30.85</span>
-                            </div>
-                        </div>
+                    <div className="game-card gradient-border">
+                                    <div className="game-card-img"><a href="tournament-details.html"><img
+                                                src="/1-4.png" alt="game image"/></a>
+                                        <div className="game-logo"><img src="/logo1-4.png" alt="game logo"/>
+                                        </div>
+                                    </div>
+                                    <div className="game-card-details">
+                                        <h3 className="box-title"><a href="tournament-details.html">League of Legends</a>
+                                        </h3>
+                                        <p className="game-content">Entry Fee:<span className="text-theme">$10.00</span></p>
+                                    </div>
+                                </div>
                     </div>
                 </div>
             </div>
